@@ -2,7 +2,7 @@
 public class FirstClass {
 
 	public static void main(String[] args) {
-		System.out.println("µÚÒ»¸ö³ÌĞò£¡£¡");
+		System.out.println("ç¬¬ä¸€ä¸ªç¨‹åº...");
 	}
 	
 }
