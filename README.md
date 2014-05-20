@@ -1,6 +1,0 @@
-BBS
-===
-
-BBSTest
-
-by zdcsoul
