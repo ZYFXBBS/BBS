@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -35,49 +36,30 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
     
     @Autowired
     private MemberController memberController;
-//    
-//    @Test  
-//    public void testInsertGoods(){  
-//        Goods goods = new Goods();  
-//        goods.setGoodName("thinkpads笔记本");  
-//        goods.setPrice(5200);
-//        goodsMapper.saveGoods(goods);
-//    }
-//    
+    
+    /**
+     * 测试
+     */
     @Test  
-    public void testGetGoodsById() {  
+    public void testqueryAllMember() {  
+    	Object o = memberController.queryAllMember();
+    	ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			String str = objectMapper.writeValueAsString(o);
+			System.out.println(str);
+		} catch (Exception e) {
+		e.printStackTrace();
+		}
+    }
+    
+    @Test  
+    public void testSelectMemberByID(){  
+    	
     	try {
-    		   List<Member> list = mapper.queryAllMembers(new Page());
-    		   System.out.println("m" +list.size());  
+    		Member m = mapper.selectMemberByID(1);
+    		System.out.println(m.getMemberName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//    	memberController.getMember();
-       
     }
-//    
-//    @Test  
-//    public void testUpdateGoodsById(){  
-//        Goods goods = new Goods();  
-//        goods.setGoodsId(2);  
-//        goods.setPrice(36.20);  
-//        goodsMapper.updateGoodsById(goods);  
-//    }
-//    
-//    @Test  
-//    public void testUpdateGoodsById1(){  
-//        Goods goods = new Goods();  
-//        goods.setGoodsId(2);  
-//        goods.setPrice(3250.20);  
-//        Map<String,Object> map = new HashMap<String,Object>();  
-//        map.put("price",5521);  
-//        map.put("id",2);  
-//        goodsMapper.updateGoodsByIdByMap(map);  
-//    }  
-//    
-//    @Test  
-//    public void testDeleteGoodsById(){  
-//        int id = 2;  
-//        goodsMapper.deleteGoodsById(id);  
-//    }  
 }
