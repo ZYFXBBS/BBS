@@ -1,15 +1,21 @@
 package com.zyfx.core.bbs.member.services;
 
 import java.util.List;
+
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.framework.common.utils.Page;
 
 /**
  * @author Administrator
  */
 public interface IMemberService {
 
-	
-    public List<Member> queryAllMembers();
+	/**
+	 * 查询 会员列表 带分页
+	 * @param page
+	 * @return
+	 */
+    public Page queryAllMembers(Page page);
     
     /**
      * 登录
