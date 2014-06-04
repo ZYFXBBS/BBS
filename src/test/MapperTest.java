@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit38.AbstractJUnit38SpringContextTests;
 
+import com.zyfx.core.bbs.member.controller.MemberController;
 import com.zyfx.core.bbs.member.inter.IMemberOperation;
 import com.zyfx.core.bbs.member.model.Member;
 
@@ -29,6 +30,9 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 
     @Autowired
     private IMemberOperation mapper;
+    
+    @Autowired
+    private MemberController memberController;
 //    
 //    @Test  
 //    public void testInsertGoods(){  
@@ -40,14 +44,14 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 //    
     @Test  
     public void testGetGoodsById() {  
-    	try {
-    		   Map m = mapper.selectMemberByID(1);
-    		   System.out.println("ssssss" );  
-    		   System.out.println("m" +m);  
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-     
+//    	try {
+//    		   Map m = mapper.selectMemberByID(1);
+//    		   System.out.println("ssssss" );  
+//    		   System.out.println("m" +m);  
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+    	memberController.getMember();
        
     }
 //    
