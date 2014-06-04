@@ -7,6 +7,7 @@
 package test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -17,6 +18,7 @@ import org.springframework.test.context.junit38.AbstractJUnit38SpringContextTest
 import com.zyfx.core.bbs.member.controller.MemberController;
 import com.zyfx.core.bbs.member.inter.IMemberOperation;
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.framework.common.utils.Page;
 
 
 /**  
@@ -44,14 +46,13 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 //    
     @Test  
     public void testGetGoodsById() {  
-//    	try {
-//    		   Map m = mapper.selectMemberByID(1);
-//    		   System.out.println("ssssss" );  
-//    		   System.out.println("m" +m);  
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-    	memberController.getMember();
+    	try {
+    		   List<Member> list = mapper.queryAllMembers(new Page());
+    		   System.out.println("m" +list.size());  
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//    	memberController.getMember();
        
     }
 //    
