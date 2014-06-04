@@ -25,7 +25,7 @@ import com.zyfx.core.bbs.member.model.Member;
  */
 @SuppressWarnings("deprecation")
 @ContextConfiguration("classpath:applicationContext-*.xml")
-public class GoodsMapperTest extends AbstractJUnit38SpringContextTests{
+public class MapperTest extends AbstractJUnit38SpringContextTests{
 
     @Autowired
     private IMemberOperation mapper;
