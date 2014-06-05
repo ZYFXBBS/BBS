@@ -62,4 +62,15 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 			e.printStackTrace();
 		}
     }
+    
+    @Test  
+    public void testqueryAllMembersCount(){  
+    	
+    	try {
+    		int count = mapper.queryAllMembersCount();
+    		System.out.println(count);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 }

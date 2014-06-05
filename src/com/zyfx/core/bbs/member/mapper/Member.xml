@@ -12,7 +12,7 @@
 	    select * from `Member` 
 	</select>
 	
-	<select id="queryAllMembersCount"  resultType="Member">
+	<select id="queryAllMembersCount"  resultType="int">
 	    select count(*) from `Member` 
 	</select>
 	

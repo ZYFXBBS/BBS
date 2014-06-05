@@ -27,5 +27,5 @@ public interface IMemberOperation extends IBaseOperation {
 	 * 查询 所有会员总数
 	 * @return
 	 */
-	public List<Member> queryAllMembersCount();
+	public int queryAllMembersCount();
 }
