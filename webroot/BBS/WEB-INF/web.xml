@@ -15,7 +15,7 @@
    <!-- 载入资源文件中的配置 -->
 	<servlet>
 		<servlet-name>loadConfig</servlet-name>
-		<servlet-class>om.zyfx.core.system.servlet.LoadConfigServlet</servlet-class>
+		<servlet-class>com.zyfx.core.system.servlet.LoadConfigServlet</servlet-class>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
    
