@@ -22,4 +22,10 @@ public interface IMemberOperation extends IBaseOperation {
 	 * @return
 	 */
 	public List<Member> queryAllMembers(Page page);
+	
+	/**
+	 * 查询 所有会员总数
+	 * @return
+	 */
+	public List<Member> queryAllMembersCount();
 }

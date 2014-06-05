@@ -12,6 +12,10 @@
 	    select * from `Member` 
 	</select>
 	
+	<select id="queryAllMembersCount"  resultType="Member">
+	    select count(*) from `Member` 
+	</select>
+	
     
     
 </mapper>
