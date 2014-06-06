@@ -5,6 +5,7 @@
 	<!-- 别名 -->
 	<typeAliases >
 		<typeAlias type ="com.zyfx.core.bbs.member.model.Member" alias ="Member" />
+		<typeAlias type ="com.zyfx.core.framework.common.utils.Page" alias ="Page" />
 	</typeAliases >
 	
 	<plugins>

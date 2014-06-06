@@ -14,7 +14,7 @@ public interface IMemberOperation extends IBaseOperation {
 	 * @param 
 	 * @author by zhp 2014-5-29 上午12:18:50
 	 */
-	public Member selectMemberByID(int memberId);
+	public Member selectMemberById(int memberId);
 	
 	/**
 	 * 查询所有 会员 并且分页
@@ -29,10 +29,23 @@ public interface IMemberOperation extends IBaseOperation {
 	 */
 	public int queryAllMembersCount();
 	
-	
+	/**
+	 * 添加 会员
+	 * @param member
+	 */
 	public void addMember(Member member);
 	
 	
+	/**
+	 * 跟新会员信息
+	 * @param member
+	 */
 	public void updateMember(Member member);
+	
+	/**
+	 * 删除会员信息
+	 * @param memberId
+	 */
+	public void deleteMember(int memberId);
 	
 }

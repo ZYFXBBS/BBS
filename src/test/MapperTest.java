@@ -57,7 +57,7 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
     public void testSelectMemberByID(){  
     	
     	try {
-    		Member m = mapper.selectMemberByID(1);
+    		Member m = mapper.selectMemberById(1);
     		System.out.println(m.getMemberName());
 		} catch (Exception e) {
 			e.printStackTrace();

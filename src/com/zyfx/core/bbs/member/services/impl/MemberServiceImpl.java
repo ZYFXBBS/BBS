@@ -21,9 +21,12 @@ public class MemberServiceImpl implements IMemberService{
 		return false;
 	}
 
-	public Member getMemberById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * 查询会员信息 
+	 */
+	public Member getMemberById(int memberId) {
+		
+		return mapper.selectMemberById(memberId);
 	}
 
 	public boolean getMemberByName(String name) {
