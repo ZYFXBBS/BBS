@@ -51,17 +51,17 @@ opacity: .25;
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">网站名</a>
+						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">自由飞翔BBS</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 							<ul class="nav">
 								<li class="active">
 									<a href="#">主页</a>
 								</li>
 								<li>
-									<a href="#">链接</a>
+									<a href="#">会员</a>
 								</li>
 								<li>
-									<a href="#">链接</a>
+									<a href="#">文章</a>
 								</li>
 								<li class="dropdown">
 									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
@@ -128,20 +128,12 @@ opacity: .25;
 			<div class=" sidebar-nav">
 
                        <ul class="nav nav-list bs-docs-sidenav affix-top">
-						<li class="active">	<a href="#overview"><i class="icon-chevron-right"></i> 概览</a>	</li>	
-						<li class="">	<a href="#transitions"><i class="icon-chevron-right"></i> 过渡效果</a>	</li>	
-						<li class="">	<a href="#modals"><i class="icon-chevron-right"></i> 模态对话框</a>	</li>	
-						<li class="">	<a href="#dropdowns"><i class="icon-chevron-right"></i> 下拉菜单</a>	</li>	
-						<li>	<a href="#scrollspy"><i class="icon-chevron-right"></i> 滚动监听</a>	</li>	
-						<li class="">	<a href="#tabs"><i class="icon-chevron-right"></i> 标签页</a>	</li>	
-						<li class="">	<a href="#tooltips"><i class="icon-chevron-right"></i> 工具提示</a>	</li>	
-						<li class="">	<a href="#popovers"><i class="icon-chevron-right"></i> 弹出提示</a>	</li>	
-						<li class="">	<a href="#alerts"><i class="icon-chevron-right"></i> 警告框</a>	</li>	
-						<li class="">	<a href="#buttons"><i class="icon-chevron-right"></i> 按钮</a>	</li>	
-						<li class="">	<a href="#collapse"><i class="icon-chevron-right"></i> Collapse</a>	</li>	
-						<li class="">	<a href="#carousel"><i class="icon-chevron-right"></i> 轮播</a>	</li>	
-						<li class="">	<a href="#typeahead"><i class="icon-chevron-right"></i> 输入提示</a>	</li>	
-						<li class="">	<a href="#affix"><i class="icon-chevron-right"></i> 附加导航</a>	</li>	
+						<li class="active">	<a href="#overview"><i class="icon-chevron-right"></i> 用户管理</a>	</li>	
+						<li class="">	<a href="#transitions"><i class="icon-chevron-right"></i> 文章管理</a>	</li>	
+						<li class="">	<a href="#modals"><i class="icon-chevron-right"></i> 评论管理</a>	</li>	
+						<li class="">	<a href="#dropdowns"><i class="icon-chevron-right"></i> 板块管理</a>	</li>	
+						<li>	<a href="#scrollspy"><i class="icon-chevron-right"></i> 积分管理</a>	</li>	
+						<li class="">	<a href="#affix"><i class="icon-chevron-right"></i> 其他</a>	</li>	
 						</ul>
                    </div>
 
