@@ -23,11 +23,70 @@
              ,#{memberPWD,jdbcType=VARCHAR},#{memberIcon,jdbcType=VARCHAR},#{memberRealName,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},
              #{mobile,jdbcType=VARCHAR},#{homephone,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR},#{postCode,jdbcType=VARCHAR},
              #{isAdmin,jdbcType=VARCHAR},#{isPower,jdbcType=VARCHAR},#{mark,jdbcType=VARCHAR},#{action,jdbcType=VARCHAR},
-             #{topicCount,jdbcType=INTEGER},#{replyCount,jdbcType=INTEGER},#{date,jdbcType=TIMESTAMP},#{LastVist,jdbcType=VARCHAR}
+             #{topicCount,jdbcType=INTEGER},#{replyCount,jdbcType=INTEGER},#{date,jdbcType=TIMESTAMP},#{LastVist,jdbcType=TIMESTAMP}
              )
     </insert>
     
-	
+    <update id="updateMember" parameterType="Member" >
+        update member 
+        <set>
+	        <if test="memberName != null and memberName!='' ">
+				memberName = #{memberName,jdbcType=VARCHAR},
+			</if>
+			<if test="memberPWD != null and memberPWD!='' ">
+				memberPWD = #{memberPWD,jdbcType=VARCHAR},
+			</if>
+			<if test="memberIcon != null and memberIcon!='' ">
+				memberIcon = #{memberIcon,jdbcType=VARCHAR},
+			</if>
+			<if test="memberRealName != null and memberRealName!='' ">
+				memberRealName = #{memberRealName,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null and email!='' ">
+				email = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="mobile != null and mobile!='' ">
+				mobile = #{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="homephone != null and homephone!='' ">
+				homephone = #{homephone,jdbcType=VARCHAR},
+			</if>
+			<if test="qq != null and qq!='' ">
+				qq = #{qq,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null and address!='' ">
+				address = #{address,jdbcType=VARCHAR},
+			</if>
+			<if test="postCode != null and postCode!='' ">
+				postCode = #{postCode,jdbcType=VARCHAR},
+			</if>
+			<if test="isAdmin != null and isAdmin!='' ">
+				isAdmin = #{isAdmin,jdbcType=VARCHAR},
+			</if>
+			<if test="isPower != null and isPower!='' ">
+				isPower = #{isPower,jdbcType=VARCHAR},
+			</if>
+			<if test="mark != null and mark!='' ">
+				mark = #{mark,jdbcType=VARCHAR},
+			</if>
+			<if test="action != null and action!='' ">
+				action = #{action,jdbcType=VARCHAR},
+			</if>
+			<if test="topicCount != null and topicCount!='' ">
+				topicCount = #{topicCount,jdbcType=INTEGER},
+			</if>
+			<if test="replyCount != null and replyCount!='' ">
+				replyCount = #{replyCount,jdbcType=INTEGER},
+			</if>
+			<if test="date != null and date!='' ">
+				date = #{date,jdbcType=TIMESTAMP},
+			</if>
+			<if test="LastVist != null and LastVist!='' ">
+				LastVist = #{LastVist,jdbcType=TIMESTAMP},
+			</if>
+			
+        </set>
+    </update>
     
     
 </mapper>
