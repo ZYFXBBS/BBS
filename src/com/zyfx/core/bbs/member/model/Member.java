@@ -13,14 +13,14 @@ public class Member {
 	private String mobile;//手机
 	private String homephone;//家庭电话
 	private String qq;//qq
-	private String Address;//地址
+	private String address;//地址
 	private String postCode;//邮编
 	private String isAdmin;//是否管理员
 	private String isPower;//是否版主
 	private String mark;//积分
 	private String action;//是否在线
-	private String topicCount;//发帖数量
-	private String replyCount;//回帖数量
+	private int topicCount;//发帖数量
+	private int replyCount;//回帖数量
 	private Date date;//注册时间
 	private Date LastVist;//最后登出时间
 	
@@ -78,11 +78,12 @@ public class Member {
 	public void setQq(String qq) {
 		this.qq = qq;
 	}
+	
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 	public String getPostCode() {
 		return postCode;
@@ -114,16 +115,16 @@ public class Member {
 	public void setAction(String action) {
 		this.action = action;
 	}
-	public String getTopicCount() {
+	public int getTopicCount() {
 		return topicCount;
 	}
-	public void setTopicCount(String topicCount) {
+	public void setTopicCount(int topicCount) {
 		this.topicCount = topicCount;
 	}
-	public String getReplyCount() {
+	public int getReplyCount() {
 		return replyCount;
 	}
-	public void setReplyCount(String replyCount) {
+	public void setReplyCount(int replyCount) {
 		this.replyCount = replyCount;
 	}
 	public Date getDate() {

@@ -16,6 +16,18 @@
 	    select count(*) from `Member` 
 	</select>
 	
+	 <insert id="addMember" parameterType="Member" 
+        useGeneratedKeys="true" keyProperty="memberId"> 
+        insert into member(memberName,memberPWD,memberIcon,memberRealName,email,mobile,homephone,qq,address,postCode,isAdmin,isPower,mark,action,topicCount,replyCount,date,LastVist)
+             values(#{memberName,jdbcType=VARCHAR}
+             ,#{memberPWD,jdbcType=VARCHAR},#{memberIcon,jdbcType=VARCHAR},#{memberRealName,jdbcType=VARCHAR},#{email,jdbcType=VARCHAR},
+             #{mobile,jdbcType=VARCHAR},#{homephone,jdbcType=VARCHAR},#{qq,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR},#{postCode,jdbcType=VARCHAR},
+             #{isAdmin,jdbcType=VARCHAR},#{isPower,jdbcType=VARCHAR},#{mark,jdbcType=VARCHAR},#{action,jdbcType=VARCHAR},
+             #{topicCount,jdbcType=INTEGER},#{replyCount,jdbcType=INTEGER},#{date,jdbcType=TIMESTAMP},#{LastVist,jdbcType=VARCHAR}
+             )
+    </insert>
+    
+	
     
     
 </mapper>

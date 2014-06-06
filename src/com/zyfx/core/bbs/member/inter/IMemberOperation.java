@@ -28,4 +28,7 @@ public interface IMemberOperation extends IBaseOperation {
 	 * @return
 	 */
 	public int queryAllMembersCount();
+	
+	
+	public void addMember(Member member);
 }

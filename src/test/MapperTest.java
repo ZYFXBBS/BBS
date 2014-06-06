@@ -73,4 +73,17 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 			e.printStackTrace();
 		}
     }
+    
+    @Test
+    public void testaddMember(){  
+    	Member m = new Member();
+    	m.setMemberName("zhp");
+    	m.setMemberPWD("123");
+    	m.setMemberRealName("sssssss");
+    	try {
+    	   mapper.addMember(m);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 }
