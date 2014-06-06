@@ -31,4 +31,8 @@ public interface IMemberOperation extends IBaseOperation {
 	
 	
 	public void addMember(Member member);
+	
+	
+	public void updateMember(Member member);
+	
 }

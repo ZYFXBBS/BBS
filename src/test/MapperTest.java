@@ -6,6 +6,7 @@
 
 package test;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,6 +83,22 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
     	m.setMemberRealName("sssssss");
     	try {
     	   mapper.addMember(m);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @Test
+    public void testupdateMember(){  
+    	Member m = new Member();
+    	m.setMemberName("zhp1111111111111111");
+    	m.setMemberPWD("1231111111");
+    	m.setMemberRealName("22222222222222");
+    	m.setDate(new Date());
+    	m.setMemberId(1);
+    	m.setTopicCount(100);
+    	try {
+    	   mapper.updateMember(m);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

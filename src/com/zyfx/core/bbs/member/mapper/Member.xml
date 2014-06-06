@@ -84,8 +84,8 @@
 			<if test="LastVist != null and LastVist!='' ">
 				LastVist = #{LastVist,jdbcType=TIMESTAMP},
 			</if>
-			
         </set>
+         where memberId = #{memberId,jdbcType=INTEGER}  
     </update>
     
     
