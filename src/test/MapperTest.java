@@ -43,7 +43,8 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
      */
     @Test  
     public void testqueryAllMember() {  
-    	Object o = memberController.queryAllMember();
+    	Page o = memberController.queryAllMember();
+    	System.out.println(o.getTotalRows()+"总数！！");
     	ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			String str = objectMapper.writeValueAsString(o);
@@ -53,54 +54,54 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 		}
     }
     
-    @Test  
-    public void testSelectMemberByID(){  
-    	
-    	try {
-    		Member m = mapper.selectMemberById(1);
-    		System.out.println(m.getMemberName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
+//    @Test  
+//    public void testSelectMemberByID(){  
+//    	
+//    	try {
+//    		Member m = mapper.selectMemberById(1);
+//    		System.out.println(m.getMemberName());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//    }
     
-    @Test  
-    public void testqueryAllMembersCount(){  
-    	
-    	try {
-    		int count = mapper.queryAllMembersCount();
-    		System.out.println(count);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
+//    @Test  
+//    public void testqueryAllMembersCount(){  
+//    	
+//    	try {
+//    		int count = mapper.queryAllMembersCount();
+//    		System.out.println(count);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//    }
     
-    @Test
-    public void testaddMember(){  
-    	Member m = new Member();
-    	m.setMemberName("zhp");
-    	m.setMemberPWD("123");
-    	m.setMemberRealName("sssssss");
-    	try {
-    	   mapper.addMember(m);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
-    
-    @Test
-    public void testupdateMember(){  
-    	Member m = new Member();
-    	m.setMemberName("zhp1111111111111111");
-    	m.setMemberPWD("1231111111");
-    	m.setMemberRealName("22222222222222");
-    	m.setDate(new Date());
-    	m.setMemberId(1);
-    	m.setTopicCount(100);
-    	try {
-    	   mapper.updateMember(m);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
+//    @Test
+//    public void testaddMember(){  
+//    	Member m = new Member();
+//    	m.setMemberName("zhp");
+//    	m.setMemberPWD("123");
+//    	m.setMemberRealName("sssssss");
+//    	try {
+//    	   mapper.addMember(m);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//    }
+//    
+//    @Test
+//    public void testupdateMember(){  
+//    	Member m = new Member();
+//    	m.setMemberName("zhp1111111111111111");
+//    	m.setMemberPWD("1231111111");
+//    	m.setMemberRealName("22222222222222");
+//    	m.setDate(new Date());
+//    	m.setMemberId(1);
+//    	m.setTopicCount(100);
+//    	try {
+//    	   mapper.updateMember(m);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//    }
 }

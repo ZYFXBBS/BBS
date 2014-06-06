@@ -40,12 +40,11 @@ public class MemberServiceImpl implements IMemberService{
 	}
 
 	public Page queryAllMembers(Page page) {
-		List<Member> list = mapper.queryAllMembers(page);
-		if(list != null){
-			int totalRows = mapper.queryAllMembersCount();
-			page.setTotalRows(totalRows);
-			page.setResult(list);
+		if(page == null){
+			return null;
 		}
+		List<Member> list = mapper.queryAllMembers(page);
+		page.setResult(list);
 		return page;
 	}
 
