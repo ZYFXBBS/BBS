@@ -1,11 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>demo</title>
-<%@ include file="/header/header.jsp" %> 
+<%
+response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
+%>
+<%@ include file="/header/header.jsp" %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>消息管理</title>
 <style type="text/css">	
 .bs-docs-sidenav.affix {top: 40px;	}	
 /*  >表示第一个子元素  */
@@ -30,21 +32,23 @@ margin-right: -6px;
 opacity: .25;	
 }	
 </style>
-<script type="text/javascript">	
-	$(function() {		
-		$('.nav li').click(function(e) {			
-		$('.nav li').removeClass('active');			
-		//$(e.target).addClass('active');			
-		$(this).addClass('active');		
-		});	
-	});	
+<script>
+	$(function(){
+		$("body").layout(  
+			{     
+			    applyDefaultStyles: false,//应用默认样式  
+			    north__size:50,//pane的大小  
+			    spacing_open:-1//边框的间隙  
+			}  
+		 );  
+		 $(".ui-layout-center").css("z-index",-1000);
+		});
+	
 	</script>
 </head>
 <body >
-	<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span12">
-			<div class="navbar">
+	 <div class="ui-layout-north" id="ui-layout-north">
+	 		<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
 						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">自由飞翔BBS</a>
@@ -85,80 +89,33 @@ opacity: .25;
 									</ul>
 								</li>
 							</ul>
-							<ul class="nav pull-right">
-								<li>
-									<a href="#">右边链接</a>
-								</li>
-								<li class="divider-vertical">
-								</li>
-								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">下拉导航1</a>
-										</li>
-										<li>
-											<a href="#">下拉导航2</a>
-										</li>
-										<li>
-											<a href="#">其他</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="#">链接3</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							
 						</div>
 						
 					</div>
 				</div>
-				
-			</div>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span2">
-			<div class=" sidebar-nav">
+			</div>	
+	 </div>
+    <div class="ui-layout-west">
+		<!--<iframe id="messagemanage"   name="messagemanage" style="width:100%;height:100%"  src="http://www.baidu.com" frameborder="NO" scrolling="auto" noresize ></iframe> -->
+				<div class=" sidebar-nav">
 
                        <ul class="nav nav-list bs-docs-sidenav affix-top">
 						<li class="active">	<a href="#overview"><i class="icon-chevron-right"></i> 用户管理</a>	</li>	
-						<li class="">	<a href="#transitions"><i class="icon-chevron-right"></i> 文章管理</a>	</li>	
+						<li class="">	
+								<a href="#transitions"><i class="icon-chevron-right"></i> 文章管理</a>	
+						</li>	
 						<li class="">	<a href="#modals"><i class="icon-chevron-right"></i> 评论管理</a>	</li>	
 						<li class="">	<a href="#dropdowns"><i class="icon-chevron-right"></i> 板块管理</a>	</li>	
 						<li>	<a href="#scrollspy"><i class="icon-chevron-right"></i> 积分管理</a>	</li>	
 						<li class="">	<a href="#affix"><i class="icon-chevron-right"></i> 其他</a>	</li>	
 						</ul>
                    </div>
-
-		</div>
-		<div class="well span10">
-			<div class="tabbable" id="tabs-739706">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#panel-613973" data-toggle="tab">第一部分</a>
-					</li>
-					<li>
-						<a href="#panel-208426" data-toggle="tab">第二部分</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="panel-613973">
-						<p>
-							第一部分内容.
-						</p>
-					</div>
-					<div class="tab-pane" id="panel-208426">
-						<p>
-							第二部分内容.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+	
 	</div>
-</div>
+	<div class="ui-layout-center">
+		<iframe id="rightList"  name="rightList" style="width:100%;height:100%" src="ss" scrolling="auto" frameborder="NO"></iframe>
+	</div>
 </body>
 </html>
+
