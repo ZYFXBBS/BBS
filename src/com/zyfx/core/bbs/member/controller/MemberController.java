@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.zyfx.core.bbs.member.model.Member;
 import com.zyfx.core.bbs.member.services.IMemberService;
 import com.zyfx.core.framework.common.utils.Page;
 
-@Controller("/memberController")
+@Controller
+@RequestMapping("/memberController")
 public class MemberController {
 
 	@Autowired
@@ -16,10 +18,14 @@ public class MemberController {
 	
 	@RequestMapping("/queryAllMember")
 	@ResponseBody
-	public Page queryAllMember(){
+	public Member queryAllMember(){
 		Page page = new Page();
+		System.out.println("ssssssssssssss");
 		page.setCurrentPage(1);
-		page =iMemberService.queryAllMembers(page);
-		return page;
+		page.setPageSize(10);
+		//page =iMemberService.queryAllMembers(page);
+		Member m = new Member();
+		m.setMemberName("ssssss");
+		return m;
 	}
 }

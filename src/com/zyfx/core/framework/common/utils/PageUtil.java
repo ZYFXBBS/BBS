@@ -46,9 +46,9 @@ public class PageUtil {
 //    }
 
     public static void checkPage(Page page) {
-        logger.debug("初始化总数" + page.totalRows);
+        logger.debug("初始化总数" + page.totalCount);
         logger.debug("初始化页数" + page.currentPage);
-        logger.debug(page.getTotalRows() / page.getPageSize());
+        logger.debug(page.getTotalCount() / page.getPageSize());
         logger.debug(page.getPageSize());
         int countPage = getTotalPage(page);
         if (page.currentPage > countPage) {
@@ -69,11 +69,11 @@ public class PageUtil {
      */
     public static int getTotalPage(Page page) {
         int countPage = 0;
-        if (page.getTotalRows() > 0) {
-            if (page.getTotalRows() % page.getPageSize() == 0) {
-                countPage = page.getTotalRows() / page.getPageSize();
+        if (page.getTotalCount()> 0) {
+            if (page.getTotalCount()% page.getPageSize() == 0) {
+                countPage = page.getTotalCount()/ page.getPageSize();
             } else {
-                countPage = page.getTotalRows() / page.getPageSize() + 1;
+                countPage = page.getTotalCount() / page.getPageSize() + 1;
             }
         }
         return countPage;
@@ -88,7 +88,7 @@ public class PageUtil {
      * @return
      */
     public static String getPageStr(Page page) {
-        int totalResult = page.getTotalRows();
+        int totalResult = page.getTotalCount();
         int currentPage = page.getCurrentPage();
         int totalPage = page.getTotalPage();
         boolean entityOrField = false;

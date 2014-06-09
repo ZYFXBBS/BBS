@@ -68,7 +68,7 @@ public class PaginationInterceptor implements Interceptor {
                 Object parameterObject = boundSql.getParameterObject();
                 if (boundSql == null || boundSql.getSql() == null || "".equals(boundSql.getSql()))
                     return null;
-                int totpage = page.getTotalRows();
+                int totpage = page.getTotalCount();
                 // 得到总记录数
                 if (totpage == 0) { // 对符合条件的数据进行统计 生成总页数
                     StringBuffer countSql = new StringBuffer(originalSql.length() + 100);
@@ -89,7 +89,7 @@ public class PaginationInterceptor implements Interceptor {
                     if (rs.next()) {
                         totpage = rs.getInt(1);
                     }
-                    page.setTotalRows(totpage);
+                    page.setTotalCount(totpage);
                     rs.close();
                     countStmt.close();
                     connection.close();

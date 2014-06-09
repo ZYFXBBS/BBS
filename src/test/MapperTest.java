@@ -44,7 +44,7 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
     @Test  
     public void testqueryAllMember() {  
     	Page o = memberController.queryAllMember();
-    	System.out.println(o.getTotalRows()+"总数！！");
+    	System.out.println(o.getTotalCount()+"总数！！");
     	ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			String str = objectMapper.writeValueAsString(o);

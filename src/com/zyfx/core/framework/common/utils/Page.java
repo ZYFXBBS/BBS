@@ -12,11 +12,10 @@ import org.apache.ibatis.session.RowBounds;
  * @created 2013-05-27
  */
 public class Page extends RowBounds implements Serializable {
-    private static final long serialVersionUID = 1L;
     protected List<?> result;
     protected int pageSize = 10;
     protected int currentPage = 1;
-    protected int totalRows = 0;
+    protected int totalCount = 0;
 
     public Page() {
     }
@@ -38,11 +37,11 @@ public class Page extends RowBounds implements Serializable {
      * @param toUrl
      *          跳转的URL
      */
-    public Page(List<?> result, int pageSize, int currentPage, int totalRows, String toUrl) {
+    public Page(List<?> result, int pageSize, int currentPage, int totalCount, String toUrl) {
         this.result = result;
         this.pageSize = pageSize;
         this.currentPage = currentPage;
-        this.totalRows = totalRows;
+        this.totalCount = totalCount;
     }
 
     public List<?> getResult() {
@@ -62,7 +61,7 @@ public class Page extends RowBounds implements Serializable {
      * 每一页的条数，默认10条
      * <p/>
      * 
-     * @author zhys
+     * @author
      * @param pageSize
      */
     public void setPageSize(int pageSize) {
@@ -79,26 +78,26 @@ public class Page extends RowBounds implements Serializable {
      * 当前第几页，默认为1，从第一页开始
      * <p/>
      * 
-     * @author zhys
+     * @author
      * @param pageNumber
      */
     public void setCurrentPage(int currentPage) {
         this.currentPage = currentPage;
     }
 
-    public int getTotalRows() {
-        return totalRows;
-    }
+    public int getTotalCount() {
+		return totalCount;
+	}
 
-    public void setTotalRows(int totalRows) {
-        this.totalRows = totalRows;
-    }
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
 
-    /**
+	/**
      * <p>
      * 获取总页数
      * <p/>
-     * @author zhp
+     * @author 
      * @param page
      * @return
      */
@@ -108,11 +107,14 @@ public class Page extends RowBounds implements Serializable {
     
 
     /**
+     * 这个先注释掉 里面方法可用 但是现在不需要用
      * <p>直接生成分页代码<p/>
-     * @author zhys
+     * @author 
      * @return
      */ 
-    public String getPageStr() {
-        return PageUtil.getPageStr(this);
-    }
+//    public String getPageStr() {
+//        return PageUtil.getPageStr(this);
+//    }
+    
+ 
 }
