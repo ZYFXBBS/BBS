@@ -51,37 +51,31 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
     var items = [{AMPLITUDE:0.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:10.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:0.923209,PREVCLOSINGPRICE:7.152},{AMPLITUDE:0.19309,PREVCLOSINGPRICE:7.52}];
     
  var cols3 = [
-        {title:'行情', name:'', width: 30, align: 'center', sortable: true, renderer: function(val,item,rowIndex){
-            return '<div class="btnPrice"></div>';
-        }},
-        { title:'股票代码', name:'AMPLITUDE' ,width:100, align:'center', sortable: true, sortName:'secu_code'},
-        { title:'股票名称', name:'PREVCLOSINGPRICE' ,width:100, align:'center', sortable: true, sortName:'secu_abbr'}
+        {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true},
+        { title:'会员真实姓名', name:'memberRealName' ,width:100, align:'center', sortable: true},
+        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true}
     
     ];
 $(document).ready(function(){
 	
 	var mmg = $('#shenhua').mmGrid({
         height: 400
-        , cols: cols
-        , url: 'data/stockQuotePage.json'
+        , cols: cols3
+        , url: '/BBS/memberController/queryAllMember.do'
         , method: 'get'
         , remoteSort:true
         //, items: items
        // , sortName: 'SECUCODE'
+        ,root: 'result'
         , sortStatus: 'asc'
         , multiSelect: true
         , checkCol: true
         , fullWidthRows: true
-        , autoLoad: false
+       // , autoLoad: false
         , plugins: [
             $('#pg').mmPaginator({})
         ]
-        , params: function(){
-            //如果这里有验证，在验证失败时返回false则不执行AJAX查询。
-          return {
-              secucode: "true"
-          }
-        }
+        
     });
 
 	

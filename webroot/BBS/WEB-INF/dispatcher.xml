@@ -22,6 +22,7 @@
 
 <!-- 注解探测器 -->
 <context:component-scan base-package ="com.zyfx.core.bbs" />
+<!-- 这个东东很重要 我忘了配置 这个 所以报了 406错误 哈哈 -->
 <mvc:annotation-driven />
 <!-- annotation默认的方法映射适配器 -->
 	<bean id ="handlerMapping" class ="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />

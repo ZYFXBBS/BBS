@@ -18,14 +18,12 @@ public class MemberController {
 	
 	@RequestMapping("/queryAllMember")
 	@ResponseBody
-	public Member queryAllMember(){
+	public Page queryAllMember(){
 		Page page = new Page();
 		System.out.println("ssssssssssssss");
 		page.setCurrentPage(1);
 		page.setPageSize(10);
-		//page =iMemberService.queryAllMembers(page);
-		Member m = new Member();
-		m.setMemberName("ssssss");
-		return m;
+		page =iMemberService.queryAllMembers(page);
+		return page;
 	}
 }
