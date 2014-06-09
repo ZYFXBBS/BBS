@@ -1,8 +1,9 @@
 package com.zyfx.core.bbs.member.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Member {
+public class Member implements Serializable{
 	
 	private int memberId;
 	private String memberName;//会员名称
