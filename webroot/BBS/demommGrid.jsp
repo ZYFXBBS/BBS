@@ -12,7 +12,7 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
 <%
   String contextPath = request.getContextPath();
   if (contextPath.equals("")) {
-    contextPath = "/GourmetWebsite";
+    contextPath = "/BBS";
   }
   String imgPath = contextPath + "/inc/css/admin/images";
 %>
@@ -45,7 +45,7 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
     <script src="<%=contextPath %>/js/mmGrid/vendor/html5shiv.js"></script>
     <![endif]-->
 	<script src="<%=contextPath %>/js/mmGrid/mmGrid.js"></script>
-	<script src=<%=contextPath %>/js/mmGrid/mmPaginator.js"></script>
+	<script src="<%=contextPath %>/js/mmGrid/mmPaginator.js"></script>
 	<script>
 //本地数据
     var items = [{AMPLITUDE:0.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:10.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:0.923209,PREVCLOSINGPRICE:7.152},{AMPLITUDE:0.19309,PREVCLOSINGPRICE:7.52}];

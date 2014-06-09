@@ -17,6 +17,7 @@ public class TestMemcached extends AbstractJUnit38SpringContextTests{
 	@Autowired
 	private IBaseCacheProxy baseCacheProxy;
 	
+	/* 这里 对象要实现 序列化接口  zhp 20140609 */
 	@Test
 	public void testSaveCached(){
 		Member m = new Member();
@@ -30,7 +31,7 @@ public class TestMemcached extends AbstractJUnit38SpringContextTests{
 		
 		
 	}
-	
+	/* 将 刚刚存入 缓存的对象获取出来 根据 key zhp 20140609 */
 	@Test
 	public void testGetCached(){
 		Member m = null;

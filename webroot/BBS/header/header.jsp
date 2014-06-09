@@ -3,7 +3,7 @@
 <%
   String contextPath = request.getContextPath();
   if (contextPath.equals("")) {
-    contextPath = "/GourmetWebsite";
+    contextPath = "/BBS";
   }
   String imgPath = contextPath + "/inc/css/admin/images";
 %>
