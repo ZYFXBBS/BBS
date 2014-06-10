@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.bbs.member.model.MemberInfo;
 import com.zyfx.core.bbs.member.services.IMemberService;
 import com.zyfx.core.framework.common.utils.Page;
+import com.zyfx.core.framework.common.utils.PageRequest;
 import com.zyfx.core.framework.common.utils.PageUtil;
 
 @Controller
@@ -32,9 +34,11 @@ public class MemberController {
 	 */
 	@RequestMapping(value = "/queryAllMember")
 	@ResponseBody
-	public Page queryAllMember(Page page){
-		page = PageUtil.isNullPage(page);
-		page =iMemberService.queryAllMembers(page);
+	public Page queryAllMember(MemberInfo info){
+//		Page page = null;
+//		page = PageUtil.converPage(pageReq);
+//		System.out.println("哈哈哈哈："+page.getSort());
+		Page page =iMemberService.queryAllMembers(info);
 		return page;
 	}
 }

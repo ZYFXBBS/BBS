@@ -21,6 +21,7 @@ import com.zyfx.core.bbs.member.controller.MemberController;
 import com.zyfx.core.bbs.member.inter.IMemberOperation;
 import com.zyfx.core.bbs.member.model.Member;
 import com.zyfx.core.framework.common.utils.Page;
+import com.zyfx.core.framework.common.utils.PageRequest;
 
 
 
@@ -41,19 +42,34 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
     /**
      * 测试
      */
-    @Test  
-    public void testqueryAllMember() {  
-    	Page o = memberController.queryAllMember();
-    	System.out.println(o.getTotalCount()+"总数！！");
-    	ObjectMapper objectMapper = new ObjectMapper();
-		try {
-			String str = objectMapper.writeValueAsString(o);
-			System.out.println(str);
-		} catch (Exception e) {
-		e.printStackTrace();
-		}
-    }
+//    @Test  
+//    public void testqueryAllMember() {  
+//    	PageRequest page = new PageRequest();
+//    	page.setPage("1");
+//    	page.setLimit("10");
+//    	page.setSort("memberName");
+//    	Page o = memberController.queryAllMember(page);
+//    	System.out.println(o.getTotalCount()+"总数！！");
+//    	ObjectMapper objectMapper = new ObjectMapper();
+//		try {
+//			String str = objectMapper.writeValueAsString(o);
+//			System.out.println(str);
+//		} catch (Exception e) {
+//		e.printStackTrace();
+//		}
+//    }
     
+    @Test  
+    public void testqueryAllMember1() {  
+    	Page page = new Page();
+    	page.setPageSize(10);
+    	page.setCurrentPage(1);
+    	Map map = new HashMap<String, String>();
+    	Member m = new Member();
+    	//m.setMemberName("memberName");
+    	//page.setSort("memberName");
+//    	mapper.queryAllMembers1(page,m);
+    }
 //    @Test  
 //    public void testSelectMemberByID(){  
 //    	
@@ -104,4 +120,19 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 //			e.printStackTrace();
 //		}
 //    }
+    
+    public static void main(String[] args) {
+		String sort = "shenhau.desc";
+		if(sort.indexOf(".") != -1){
+			String _order = sort.substring(sort.lastIndexOf(".")+1, sort.length());
+			_order =_order.toLowerCase();
+			if(sort.endsWith("desc")){
+    			sort = sort.substring(0, sort.length() - 5);
+    			System.out.println("sort数值："+sort);
+    		}else if(sort.endsWith("asc")){
+    			sort = sort.substring(0, sort.length() - 4);
+    		}
+		}
+		System.out.println(sort+"最终数值........");
+	}
 }

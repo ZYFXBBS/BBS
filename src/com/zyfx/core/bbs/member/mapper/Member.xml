@@ -8,8 +8,12 @@
 	    select * from `Member` where  memberId = #{memberId}
 	</select>
 	
-	<select id="queryAllMembers" parameterType="Page"  resultType="Member">
-	    select * from `Member` 
+	<select id="queryAllMembers" parameterType="com.zyfx.core.bbs.member.model.MemberInfo"  resultType="Member">
+	    select * from `Member`
+	    <if test="sort != null and sort!='' ">
+				order by ${sort} desc
+			</if>
+	    
 	</select>
 	
 	<select id="queryAllMembersCount"  resultType="int">

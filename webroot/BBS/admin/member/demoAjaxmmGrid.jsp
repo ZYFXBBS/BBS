@@ -51,9 +51,9 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
     var items = [{AMPLITUDE:0.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:10.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:0.923209,PREVCLOSINGPRICE:7.152},{AMPLITUDE:0.19309,PREVCLOSINGPRICE:7.52}];
     
  var cols3 = [
-        {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true},
-        { title:'会员真实姓名', name:'memberRealName' ,width:100, align:'center', sortable: true},
-        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true}
+        {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true,sortName:'memberId'},
+        { title:'会员真实姓名', name:'memberRealName' ,width:100, align:'center', sortable: true,sortName:'memberRealName'},
+        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true,sortName:'memberName'}
     
     ];
 $(document).ready(function(){
@@ -66,6 +66,7 @@ $(document).ready(function(){
         , remoteSort:true
         //, items: items
        // , sortName: 'SECUCODE'
+        ,remoteSort:true 
         ,root: 'result'
         , sortStatus: 'asc'
         , multiSelect: true
@@ -73,7 +74,7 @@ $(document).ready(function(){
         , fullWidthRows: true
        // , autoLoad: false
         , plugins: [
-            $('#pg').mmPaginator({})
+            $('#pg').mmPaginator({page: 1,limit:20})
         ]
         
     });

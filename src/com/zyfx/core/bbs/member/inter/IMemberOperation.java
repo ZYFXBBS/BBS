@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.bbs.member.model.MemberInfo;
 import com.zyfx.core.framework.common.utils.Page;
+import com.zyfx.core.framework.common.utils.PageRequest;
 
 
 public interface IMemberOperation extends IBaseOperation {
@@ -21,7 +23,7 @@ public interface IMemberOperation extends IBaseOperation {
 	 * @param page
 	 * @return
 	 */
-	public List<Member> queryAllMembers(Page page);
+	public List<Member> queryAllMembers(Page page,MemberInfo info);
 	
 	/**
 	 * 查询 所有会员总数

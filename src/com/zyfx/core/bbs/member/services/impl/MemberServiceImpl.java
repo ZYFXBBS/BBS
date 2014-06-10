@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import com.zyfx.core.bbs.member.controller.MemberController;
 import com.zyfx.core.bbs.member.inter.IMemberOperation;
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.bbs.member.model.MemberInfo;
 import com.zyfx.core.bbs.member.services.IMemberService;
 import com.zyfx.core.framework.common.utils.Page;
+import com.zyfx.core.framework.common.utils.PageUtil;
 
 @Service
 public class MemberServiceImpl implements IMemberService{
@@ -44,15 +46,16 @@ public class MemberServiceImpl implements IMemberService{
 		return false;
 	}
 
-	public Page queryAllMembers(Page page) {
+	public Page queryAllMembers(MemberInfo info) {
 		List<Member> list = null;
+		Page page = PageUtil.converPage(info);
+	//	info = PageUtil.converPageOrder(info);
 		try {
-			list = mapper.queryAllMembers(page);
+			list = mapper.queryAllMembers(page,info);
 			page.setResult(list);
 		} catch (Exception e) {
 			logger.error("查询会员列表出错", e);
 		}
-	
 		return page;
 	}
 

@@ -46,17 +46,63 @@ public class PageUtil {
 //    }
 
     /**
-     * 验证 page 是否为空
+     * 验证 page 是否为空 zhp 20140610 通过接口
      * @param page
      * @return
      */
-    public static Page isNullPage(Page page){
-    	if(page == null){
-    		page = new Page();
+    public static Page converPage(PageParameters para){
+    	Page page = new Page();
+    	String pageStr = para.getPage();
+    	String limit = para.getLimit();
+    	if(StringUtil.isNullOrEmpty(pageStr)){
+    		page.setCurrentPage(1);
+    	}else{
+    		try {
+				page.setCurrentPage(Integer.parseInt(pageStr));
+			} catch (Exception e) {
+				logger.error("转换 PageRequest Page参数错误. [page="+pageStr+"]",e);
+				page.setCurrentPage(1);
+			}
     	}
+    	if(StringUtil.isNullOrEmpty(limit)){
+    		page.setPageSize(10);
+    	}else{
+    		try {
+				page.setPageSize(Integer.parseInt(limit));
+			} catch (Exception e) {
+				logger.error("转换 PageRequest Page参数错误. [PageSize="+limit+"]",e);
+				page.setPageSize(10);
+			}
+    	}
+    	
     	return page;
     }
     
+    /**
+     * 处理排序
+     * @param para
+     * @return
+     */
+    public static Object converPageOrder(PageParameters para){
+    	if(null == para){
+    		return null;
+    	}
+    	String sort = para.getSort();
+    	if(!StringUtil.isNullOrEmpty(sort)){
+    		String _order = null;
+    		if(sort.indexOf(".") != -1){
+    			_order = sort.substring(sort.lastIndexOf(".")+1, sort.length());
+    			_order =_order.toLowerCase();
+    			if(sort.endsWith("desc")){
+        			sort = sort.substring(0, sort.length() - 5);
+        		}else if(sort.endsWith("asc")){
+        			sort = sort.substring(0, sort.length() - 4);
+        		}
+    		}
+    		para.setSort(sort+"  "+_order);
+    	}
+    	return para;
+    }
     public static void checkPage(Page page) {
         logger.debug("初始化总数" + page.totalCount);
         logger.debug("初始化页数" + page.currentPage);

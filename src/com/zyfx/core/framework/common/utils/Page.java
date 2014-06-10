@@ -104,8 +104,6 @@ public class Page extends RowBounds implements Serializable {
     public int getTotalPage() {
         return PageUtil.getTotalPage(this);
     }
-    
-
     /**
      * 这个先注释掉 里面方法可用 但是现在不需要用
      * <p>直接生成分页代码<p/>

@@ -3,6 +3,7 @@ package com.zyfx.core.bbs.member.services;
 import java.util.List;
 
 import com.zyfx.core.bbs.member.model.Member;
+import com.zyfx.core.bbs.member.model.MemberInfo;
 import com.zyfx.core.framework.common.utils.Page;
 
 /**
@@ -15,7 +16,7 @@ public interface IMemberService {
 	 * @param page
 	 * @return
 	 */
-    public Page queryAllMembers(Page page);
+    public Page queryAllMembers(MemberInfo info);
     
     /**
      * 登录

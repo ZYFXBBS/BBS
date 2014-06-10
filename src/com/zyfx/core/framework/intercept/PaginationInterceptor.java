@@ -37,6 +37,9 @@ import com.zyfx.core.framework.common.utils.Page;
 
 
 
+import com.zyfx.core.framework.common.utils.PageParameters;
+import com.zyfx.core.framework.common.utils.PageUtil;
+
 import cn.org.rapid_framework.jdbc.dialect.Dialect;
 import cn.org.rapid_framework.util.PropertiesHelper;
 
@@ -59,6 +62,13 @@ public class PaginationInterceptor implements Interceptor {
         try {
             MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
             Object parameter = invocation.getArgs()[1];
+            if(parameter instanceof PageParameters){
+            	try {
+            		parameter = PageUtil.converPageOrder((PageParameters)parameter);
+				} catch (Exception e) {
+					log.error("PageUtil.converPageOrder 转换排序字段错误  [parameter="+parameter+"]",e);
+				}
+            }
             BoundSql boundSql = mappedStatement.getBoundSql(parameter);
             String originalSql = boundSql.getSql() == null || "".equals(boundSql.getSql()) ? boundSql.getSql() : boundSql.getSql().trim();
             Object invocationObj = invocation.getArgs()[2];
