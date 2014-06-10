@@ -44,7 +44,7 @@ $(function(){
             ,    resizable:                false
             },
 			west: {
-                size:                    230
+                size:                    240
             }
 		}  
 	 );  

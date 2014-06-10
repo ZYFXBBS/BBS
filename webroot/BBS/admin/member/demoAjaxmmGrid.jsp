@@ -53,7 +53,8 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
  var cols3 = [
         {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true,sortName:'memberId'},
         { title:'会员真实姓名', name:'memberRealName' ,width:100, align:'center', sortable: true,sortName:'memberRealName'},
-        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true,sortName:'memberName'}
+        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true,sortName:'memberName'},
+         { title:'邮箱', name:'email' ,width:100, align:'center'}
     
     ];
 $(document).ready(function(){

@@ -11,9 +11,8 @@
 	<select id="queryAllMembers" parameterType="com.zyfx.core.bbs.member.model.MemberInfo"  resultType="Member">
 	    select * from `Member`
 	    <if test="sort != null and sort!='' ">
-				order by ${sort} desc
-			</if>
-	    
+			order by ${sort}
+		</if>
 	</select>
 	
 	<select id="queryAllMembersCount"  resultType="int">
