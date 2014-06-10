@@ -38,10 +38,15 @@ opacity: .25;
 			{     
 			    applyDefaultStyles: false,//应用默认样式  
 			    north__size:50,//pane的大小  
-			    spacing_open:-1//边框的间隙  
+			    spacing_open:0,//边框的间隙  
+			    center: {
+	                 spacing_open:            0
+	            ,    closable:                false
+	            ,    resizable:                false
+	            }
 			}  
 		 );  
-		 $(".ui-layout-center").css("z-index",-1000);
+		 $(".ui-layout-north").css("z-index",2);
 		});
 	
 	</script>
@@ -96,25 +101,8 @@ opacity: .25;
 				</div>
 			</div>	
 	 </div>
-    <div class="ui-layout-west">
-		<!--<iframe id="messagemanage"   name="messagemanage" style="width:100%;height:100%"  src="http://www.baidu.com" frameborder="NO" scrolling="auto" noresize ></iframe> -->
-				<div class=" sidebar-nav">
-
-                       <ul class="nav nav-list bs-docs-sidenav affix-top">
-						<li class="active">	<a href="#overview"><i class="icon-chevron-right"></i> 用户管理</a>	</li>	
-						<li class="">	
-								<a href="#transitions"><i class="icon-chevron-right"></i> 文章管理</a>	
-						</li>	
-						<li class="">	<a href="#modals"><i class="icon-chevron-right"></i> 评论管理</a>	</li>	
-						<li class="">	<a href="#dropdowns"><i class="icon-chevron-right"></i> 板块管理</a>	</li>	
-						<li>	<a href="#scrollspy"><i class="icon-chevron-right"></i> 积分管理</a>	</li>	
-						<li class="">	<a href="#affix"><i class="icon-chevron-right"></i> 其他</a>	</li>	
-						</ul>
-                   </div>
-	
-	</div>
 	<div class="ui-layout-center">
-		<iframe id="rightList"  name="rightList" style="width:100%;height:100%" src="ss" scrolling="auto" frameborder="NO"></iframe>
+		<iframe id="rightList"  name="rightList" style="width:100%;height:100%" src="<%=contextPath %>/admin/member/index.jsp" scrolling="auto" frameborder="NO"></iframe>
 	</div>
 </body>
 </html>

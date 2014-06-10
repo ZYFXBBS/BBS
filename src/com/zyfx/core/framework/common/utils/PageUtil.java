@@ -45,6 +45,18 @@ public class PageUtil {
 //        return page;
 //    }
 
+    /**
+     * 验证 page 是否为空
+     * @param page
+     * @return
+     */
+    public static Page isNullPage(Page page){
+    	if(page == null){
+    		page = new Page();
+    	}
+    	return page;
+    }
+    
     public static void checkPage(Page page) {
         logger.debug("初始化总数" + page.totalCount);
         logger.debug("初始化页数" + page.currentPage);
