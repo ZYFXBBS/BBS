@@ -49,7 +49,6 @@ public class MemberServiceImpl implements IMemberService{
 	public Page queryAllMembers(MemberInfo info) {
 		List<Member> list = null;
 		Page page = PageUtil.converPage(info);
-	//	info = PageUtil.converPageOrder(info);
 		try {
 			list = mapper.queryAllMembers(page,info);
 			page.setResult(list);
