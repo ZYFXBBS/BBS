@@ -9,20 +9,13 @@
 <%
 response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
 %>
-<%
-  String contextPath = request.getContextPath();
-  if (contextPath.equals("")) {
-    contextPath = "/BBS";
-  }
-  String imgPath = contextPath + "/inc/css/admin/images";
-%>
+<%@ include file="/header/header.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
 <title>消息管理</title>
  <link rel="stylesheet" href="<%=contextPath %>/css/mmGrid/mmGrid.css">
-  <link rel="stylesheet" href="<%=contextPath %>/css/mmGrid/mmPaginator.css">
-   <script src="<%=contextPath %>/js/mmGrid/vendor/jquery-1.9.1.min.js"></script>
+ <link rel="stylesheet" href="<%=contextPath %>/css/mmGrid/mmPaginator.css">
 
     <style>
         .mmGrid,
@@ -41,41 +34,53 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
             background: url(img/botton_g2.gif) no-repeat;
         }
     </style>
+    
     <!--[if lt IE 9]>
     <script src="<%=contextPath %>/js/mmGrid/vendor/html5shiv.js"></script>
     <![endif]-->
 	<script src="<%=contextPath %>/js/mmGrid/mmGrid.js"></script>
 	<script src="<%=contextPath %>/js/mmGrid/mmPaginator.js"></script>
 	<script>
-//本地数据
-    var items = [{AMPLITUDE:0.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:10.9309,PREVCLOSINGPRICE:7.52},{AMPLITUDE:0.923209,PREVCLOSINGPRICE:7.152},{AMPLITUDE:0.19309,PREVCLOSINGPRICE:7.52}];
-    
- var cols3 = [
-        {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true,sortName:'memberId'},
+ var cols = [
+        {title:'ID', name:'memberId', width: 30, align: 'center', sortable: true,sortName:'memberId',lockWidth:true, hidden: true},
+        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true,sortName:'memberName',lockDisplay:true},
         { title:'会员真实姓名', name:'memberRealName' ,width:100, align:'center', sortable: true,sortName:'memberRealName'},
-        { title:'会员名字', name:'memberName' ,width:100, align:'center', sortable: true,sortName:'memberName'},
-         { title:'邮箱', name:'email' ,width:100, align:'center'}
+        { title:'手机', name:'mobile' ,width:100, align:'center', sortable: true,sortName:'mobile', hidden: true},
+        { title:'家庭电话', name:'homephone' ,width:100, align:'center', sortable: true,sortName:'homephone', hidden: true},
+        { title:'QQ', name:'qq' ,width:100, align:'center', sortable: true,sortName:'qq', hidden: true},
+        { title:'地址', name:'address' ,width:100, align:'center'},
+        { title:'邮编', name:'postCode' ,width:100, align:'center'},
+        { title:'积分', name:'mark' ,width:100, align:'center', sortable: true,sortName:'mark'},
+        { title:'是否在线', name:'action' ,width:100, align:'center', sortable: true,sortName:'action', hidden: true},
+        { title:'发帖数量', name:'topicCount' ,width:100, align:'center', sortable: true,sortName:'topicCount'},
+        { title:'回帖数量', name:'replyCount' ,width:100, align:'center', sortable: true,sortName:'replyCount'},
+        { title:'注册时间', name:'date' ,width:100, align:'center', sortable: true,sortName:'date', hidden: true},
+        { title:'邮箱', name:'email' ,width:100, align:'center', hidden: true},
+        { title:'操作', name:'' ,width:150, align:'center', lockWidth:true, lockDisplay: true, renderer: function(val){
+            return '<button  class="btn btn-info btn-small">查看</button> <button  class="btn btn-danger btn-small">删除</button>'
+        }}
     
     ];
 $(document).ready(function(){
 	
-	var mmg = $('#shenhua').mmGrid({
+	var mmg = $('#memberList').mmGrid({
         height: 400
-        , cols: cols3
+        , cols: cols
         , url: '/BBS/memberController/queryAllMember.do'
-        , method: 'get'
+        , method: 'post'
         , remoteSort:true
         //, items: items
        // , sortName: 'SECUCODE'
         ,remoteSort:true 
         ,root: 'result'
+        ,nowrap: true
         , sortStatus: 'asc'
         , multiSelect: true
         , checkCol: true
         , fullWidthRows: true
        // , autoLoad: false
         , plugins: [
-            $('#pg').mmPaginator({page: 1,limit:20})
+            $('#pg').mmPaginator()
         ]
         
     });
@@ -86,7 +91,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body >
-	<table id="shenhua">
+	<table id="memberList">
     </table>
 	 <div style="text-align:right;">
 	            <div id="pg"></div>
