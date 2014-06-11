@@ -18,9 +18,8 @@ $(function(){
 	
 function saveMember(){
 	var url = "<%=contextPath%>/teeAddressController/addAddress.do";
-	var para =  $.formToJson($("#form1")) ;
+	var para =  $.FJ($("#form1")) ;
 	var jsonRs = $.AF(url,para);
-	 groupId = $("#groupId ").val(); 
 	if(jsonRs.rtState){
 		// top.$.jBox.tip("保存成功！");
 	}else{

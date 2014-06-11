@@ -4,7 +4,7 @@
 /**
  * 格式化 表单为json 
  */
-jQuery.formToJson=function(form){
+jQuery.FJ=function(form){
 	var json = {};
 	$(form).find("input[name][type=text][disabled!=disabled]").each(function(i,obj){
 		json[$(obj).attr("name")] = $(obj).val();
