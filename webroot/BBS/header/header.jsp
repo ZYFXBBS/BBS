@@ -9,9 +9,11 @@
 %>
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common/bootstrap-responsive.min.css">
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common/bbs.css">
 <script src="<%=contextPath %>/js/common/jquery.js"></script>
 <script src="<%=contextPath %>/js/common/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%=contextPath %>/js/jqueryLayout/jquery.layout-latest.js"></script>
+<script src="<%=contextPath %>/js/common/bbscommon.js"></script>
 <script type="text/javascript">
 /** 变量定义 **/
 var contextPath = "<%=contextPath %>";
