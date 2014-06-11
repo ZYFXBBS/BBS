@@ -1,0 +1,51 @@
+/*!
+ * Bootstrap Responsive v2.3.2
+ * zhp 20140611
+ * Copyright 2014 zyfx
+ */
+ 
+ #T_Block
+ #T_Header
+ #T_Input
+/*  block型表格样式  */
+.T_Block {
+    border: 1px solid #dddad5;
+    border-collapse: collapse;
+    line-height:20px;
+    font-size:13px;
+}
+.T_Block td {
+    height: 32px;
+/*     vertical-align:middle; */
+    padding: 3px 3px 3px 10px; 
+  /*   overflow:hidden; */
+    /* text-align:left; */
+}
+.T_Block .T_Header td, .T_Block td.T_Header {
+    background: none repeat scroll 0 0 #f0f0f0;
+    border: 1px solid #dddad5;
+    color: #383838;
+    font-weight: bold;
+    height: 34px !important;
+    line-height: 34px;
+    padding: 0 0 0 5px;
+}
+
+.T_Block .T_Header td,
+.T_Block td.T_Header{
+   padding-left:10px;
+   border:1px #dddad5 solid;
+   color:#313131;
+}
+
+.T_Block .T_Input td, .T_Block td.T_Input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #dddad5;
+    border-right: 1px solid #dddad5;
+}
+
+.T_Block .TableContent td, .T_Block td.TableContent {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-bottom: 1px solid #dddad5;
+  border-right: 1px solid #dddad5;
+}

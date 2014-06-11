@@ -67,7 +67,7 @@ $(function(){
           </div>
 	</div>
 	<div class="ui-layout-center">
-		<iframe id="rightList"  name="rightList" style="width:100%;height:100%" src="<%=contextPath %>/admin/member/demoAjaxmmGrid.jsp" scrolling="auto" frameborder="NO"></iframe>
+		<iframe id="rightList"  name="rightList" style="width:100%;height:100%" src="<%=contextPath %>/admin/member/memberManage.jsp" scrolling="auto" frameborder="NO"></iframe>
 	</div>
 </body>
 </html>
