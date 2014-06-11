@@ -87,7 +87,7 @@ $(document).ready(function(){
 </head>
 <body >
 	<table id="shenhua">
-    </table>
+    </table>（（（（（（（（（（（（（（（（（（（（（（（（水水水水ss））））））））
 	 <div style="text-align:right;">
 	            <div id="pg"></div>
 	</div>
