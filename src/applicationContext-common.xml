@@ -65,4 +65,13 @@
 	<!-- 注解驱动的事务管理 --> 
 	<tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
 	
+	<bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper" scope="singleton">
+		<property name="mappingFiles">
+	        <list>
+	            <value>
+	               dozerBeanMapping.xml
+	            </value>
+	        </list> 
+	   </property>
+	</bean>
 </beans>

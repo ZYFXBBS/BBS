@@ -44,7 +44,7 @@ public class MemberController {
 	public JsonResult register(MemberInfo info){
 		JsonResult js = new JsonResult();
 		try {
-			iMemberService.register(member);
+			iMemberService.register(null);
 		} catch (Exception e) {
 			js.setState(false);
 			logger.error("注册会员信息失败!", e);
