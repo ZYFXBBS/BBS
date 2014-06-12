@@ -58,5 +58,11 @@
 	 <property name ="markerInterface" value ="com.zyfx.core.bbs.member.inter.IBaseOperation" />
   </bean>
 	
+	<!-- 事务管理器 -->	
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource"/>
+		
+	<!-- 注解驱动的事务管理 --> 
+	<tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
 	
 </beans>

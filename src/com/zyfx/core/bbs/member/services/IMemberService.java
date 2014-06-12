@@ -15,6 +15,7 @@ public interface IMemberService {
 	 * 查询 会员列表 带分页
 	 * @param page
 	 * @return
+	 * @throws Exception 
 	 */
     public Page queryAllMembers(MemberInfo info);
     
@@ -29,8 +30,9 @@ public interface IMemberService {
      * 注册
      * @param 
      * @author by zhp 2014-5-29 上午12:14:49
+     * @throws Exception 
      */
-    public boolean register(Member member);
+    public void register(Member member);
     
     /**
      * 根据用户名查找用户

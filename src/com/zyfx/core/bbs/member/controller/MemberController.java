@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.zyfx.core.bbs.member.model.Member;
 import com.zyfx.core.bbs.member.model.MemberInfo;
 import com.zyfx.core.bbs.member.services.IMemberService;
+import com.zyfx.core.framework.common.httpmodel.JsonResult;
 import com.zyfx.core.framework.common.utils.Page;
 import com.zyfx.core.framework.common.utils.PageRequest;
 import com.zyfx.core.framework.common.utils.PageUtil;
@@ -31,14 +32,24 @@ public class MemberController {
 	 * 获取 会员
 	 * @param page
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/queryAllMember")
 	@ResponseBody
-	public Page queryAllMember(MemberInfo info){
-//		Page page = null;
-//		page = PageUtil.converPage(pageReq);
-//		System.out.println("哈哈哈哈："+page.getSort());
+	public Page queryAllMember(MemberInfo info) throws Exception{
 		Page page =iMemberService.queryAllMembers(info);
 		return page;
+	}
+	
+	public JsonResult register(MemberInfo info){
+		JsonResult js = new JsonResult();
+		try {
+			iMemberService.register(member);
+		} catch (Exception e) {
+			js.setState(false);
+			logger.error("注册会员信息失败!", e);
+		}
+		
+		return js;
 	}
 }

@@ -59,17 +59,17 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 //		}
 //    }
     
-    @Test  
-    public void testqueryAllMember1() {  
-    	Page page = new Page();
-    	page.setPageSize(10);
-    	page.setCurrentPage(1);
-    	Map map = new HashMap<String, String>();
-    	Member m = new Member();
+//    @Test  
+//    public void testqueryAllMember1() {  
+//    	Page page = new Page();
+//    	page.setPageSize(10);
+//    	page.setCurrentPage(1);
+//    	Map map = new HashMap<String, String>();
+//    	Member m = new Member();
     	//m.setMemberName("memberName");
     	//page.setSort("memberName");
 //    	mapper.queryAllMembers1(page,m);
-    }
+//    }
 //    @Test  
 //    public void testSelectMemberByID(){  
 //    	
@@ -92,18 +92,18 @@ public class MapperTest extends AbstractJUnit38SpringContextTests{
 //		}
 //    }
     
-//    @Test
-//    public void testaddMember(){  
-//    	Member m = new Member();
-//    	m.setMemberName("zhp");
-//    	m.setMemberPWD("123");
-//    	m.setMemberRealName("sssssss");
-//    	try {
-//    	   mapper.addMember(m);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//    }
+    @Test
+    public void testaddMember(){  
+    	Member m = new Member();
+    	m.setMemberName("zhp");
+    	m.setMemberPWD("123");
+    	m.setMemberRealName("sssssss");
+    	try {
+    	   mapper.addMember(m);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 //    
 //    @Test
 //    public void testupdateMember(){  
