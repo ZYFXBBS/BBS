@@ -1,0 +1,19 @@
+<!--  
+/** zhp 20140612 
+ * 工作中 用到了 ibatis  主要是原来老网站 我用这个 测试了一下 
+ * 学习了一下 ibatis 着实觉得mybatis 方便很多 的却是 ibatis 的进化版本
+ * 保留ibatis 完全为了 今后 学习和测试 与本工程无关
+ */
+ -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<!-- 注入各个模块的sqlMap的.xml文件 -->
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" errorTracingEnabled="true"
+		useStatementNamespaces="true" maxTransactions="16" maxRequests="320"
+		maxSessions="64" />
+    <sqlMap resource="sqlmaps/Member_SqlMap.xml" />
+ </sqlMapConfig>

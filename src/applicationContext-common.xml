@@ -16,6 +16,7 @@
 	http://www.springframework.org/schema/cache/spring-cache.xsd">
 	
 	<context:component-scan base-package="com.zyfx.core.*"/>
+	    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>  
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list> 
@@ -34,7 +35,7 @@
 			</list>
 		</property> 
 	</bean>
-
+	
     <!-- 配置DataSource数据源 -->
 	<bean id ="dataSource" class ="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<property name ="driverClassName" value ="com.mysql.jdbc.Driver" />
@@ -42,8 +43,6 @@
 		<property name ="username" value ="root" />
 		<property name ="password" value ="root" />
 	</bean > 
-	
-
 	
 	 <!-- 配置SqlSessionFactoryBean -->
 	<bean id ="sqlSessionFactory"  class ="org.mybatis.spring.SqlSessionFactoryBean" >
@@ -74,4 +73,24 @@
 	        </list> 
 	   </property>
 	</bean>
+	
+	<!--  ibatis 的配置 也可以用ibatis   注入 sqlMapClientTemplate 即可 与本工程无关
+	 <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:sqlmap-config.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionConfigClass">
+			<value>
+				com.ibatis.sqlmap.engine.transaction.jdbc.JdbcTransactionConfig
+			</value>
+		</property>
+	</bean>
+	
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+     -->
 </beans>
