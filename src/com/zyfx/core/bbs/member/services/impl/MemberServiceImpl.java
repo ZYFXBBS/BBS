@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zyfx.core.bbs.member.controller.MemberController;
 import com.zyfx.core.bbs.member.inter.IMemberOperation;
@@ -27,7 +28,6 @@ public class MemberServiceImpl implements IMemberService{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 	/**
 	 * 查询会员信息 
 	 */
@@ -46,21 +46,17 @@ public class MemberServiceImpl implements IMemberService{
 		return false;
 	}
 
-	public Page queryAllMembers(MemberInfo info) {
+	public Page queryAllMembers(MemberInfo info){
 		List<Member> list = null;
 		Page page = PageUtil.converPage(info);
-		try {
-			list = mapper.queryAllMembers(page,info);
-			page.setResult(list);
-		} catch (Exception e) {
-			logger.error("查询会员列表出错", e);
-		}
+		list = mapper.queryAllMembers(page,info);
+		page.setResult(list);
 		return page;
 	}
-
-	public boolean register(Member member) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	@Transactional(rollbackFor = { Exception.class })
+	public void register(Member member) {
+			mapper.addMember(member);
 	}
 
 	@Override

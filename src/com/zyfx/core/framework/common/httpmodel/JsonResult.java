@@ -2,27 +2,29 @@ package com.zyfx.core.framework.common.httpmodel;
 
 public class JsonResult {
 
-	private boolean rtState = false;//成功标记
-	private String rtMsg = "";// 信息提示
-	private Object rtData = null;// 返回
-	public boolean isRtState() {
-		return rtState;
+	private boolean state = false;// 状态 true 成功 false 失败
+	private String msg = "";// 返回信息
+	private Object data = null;// 返回数据
+	public boolean isState() {
+		return state;
 	}
-	public void setRtState(boolean rtState) {
-		this.rtState = rtState;
+	public void setState(boolean state) {
+		this.state = state;
 	}
-	public String getRtMsg() {
-		return rtMsg;
+	public String getMsg() {
+		return msg;
 	}
-	public void setRtMsg(String rtMsg) {
-		this.rtMsg = rtMsg;
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
-	public Object getRtData() {
-		return rtData;
+	public Object getData() {
+		return data;
 	}
-	public void setRtData(Object rtData) {
-		this.rtData = rtData;
+	public void setData(Object data) {
+		this.data = data;
 	}
+	
+	
 	
 	
 }

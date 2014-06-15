@@ -1,0 +1,16 @@
+<!--  
+/** zhp 20140612 
+ * 工作中 用到了 ibatis  主要是原来老网站 我用这个 测试了一下 
+ * 学习了一下 ibatis 着实觉得mybatis 方便很多 的却是 ibatis 的进化版本
+ * 保留ibatis 完全为了 今后 学习和测试 与本工程无关
+ */
+ -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Member">
+   <insert id="addMember" parameterClass="com.zyfx.core.bbs.member.model.Member" 
+        > 
+        insert into member(memberName)
+             values(#memberName#)
+    </insert>
+</sqlMap>
