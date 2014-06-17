@@ -8,6 +8,8 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
 <%@ include file="/header/header.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>消息管理</title>
+<!--jquery  layout 布局 引入-->
+<script type="text/javascript" src="<%=contextPath %>/js/jqueryLayout/jquery.layout-latest.js"></script>
 <style type="text/css">	
 .bs-docs-sidenav.affix {top: 40px;	}	
 /*  >表示第一个子元素  */

@@ -6,6 +6,8 @@
 response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
 %>
 <%@ include file="/header/header.jsp" %>
+<!--jquery  layout 布局 引入-->
+<script type="text/javascript" src="<%=contextPath %>/js/jqueryLayout/jquery.layout-latest.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>消息管理</title>
 <style type="text/css">	

@@ -32,6 +32,8 @@ margin-right: -6px;
 opacity: .25;	
 }	
 </style>
+<!--jquery  layout 布局 引入-->
+<script type="text/javascript" src="<%=contextPath %>/js/jqueryLayout/jquery.layout-latest.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("body").layout(  
@@ -48,6 +50,7 @@ $(function(){
             }
 		}  
 	 );  
+
 	});
 </script>
 </head>

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "" "">
+<HTML lang="zh-CN"><HEAD>
+<META content="IE=10.000" http-equiv="X-UA-Compatible">
 <head>
 <%
 response.addHeader("X-UA-Compatible", "IE=edge");
@@ -15,7 +16,7 @@ response.addHeader("X-UA-Compatible", "IE=edge");
 <script type="text/javascript">
 $(function(){
 	
-	});
+});
 	
 function saveMember(){
 	var url = "<%=contextPath%>/memberController/register.do";
@@ -27,6 +28,7 @@ function saveMember(){
 		alert(jsonRs.rtMsg);
 	}
 }
+
 </script>
 </head>
 <body>
