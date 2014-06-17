@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css" href="<%=contextPath %>/css/common/bbs.css">
-<script src="<%=contextPath %>/js/common/jquery.min.js"></script>
+<script src="<%=contextPath %>/js/common/jquery-min.js"></script>
 <!--bootstrap 类库引入-->
 <script src="<%=contextPath %>/js/common/bootstrap.min.js"></script>
 <!--jquery  layout 布局 引入-->
