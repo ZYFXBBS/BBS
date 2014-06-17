@@ -49,7 +49,7 @@ public class MemberController {
 			js.setState(false);
 			logger.error("注册会员信息失败!", e);
 		}
-		
 		return js;
 	}
+	
 }

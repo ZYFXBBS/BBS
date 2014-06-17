@@ -93,6 +93,9 @@ opacity: .25;
 										</li>
 									</ul>
 								</li>
+								<li>
+									<a href="<%=contextPath %>/admin/member/register.jsp">注册</a>
+								</li>
 							</ul>
 							
 						</div>

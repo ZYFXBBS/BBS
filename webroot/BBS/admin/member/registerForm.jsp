@@ -29,7 +29,7 @@ function saveMember(){
 </script>
 </head>
 <body>
- <legend>添加会员信息</legend>
+ <legend>会员注册</legend>
 	<form  method="post" name="form1" id="form1" >
 <table width="60%" align="center">
    <tr>
@@ -65,10 +65,37 @@ function saveMember(){
 		<input type='text' name="mobile"   maxlength="50"  size="20"  />
 		</td>
 	</tr>
+	
+	<tr>
+		<td nowrap  width="120">家庭电话：</td>
+		<td nowrap  >
+		<input type='text' name="homephone"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">qq：</td>
+		<td nowrap  >
+		<input type='text' name="qq"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">地址：</td>
+		<td nowrap  >
+		<input type='text' name="address"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">邮编：</td>
+		<td nowrap  >
+		<input type='text' name="postCode"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
 	 <tr>
 	    <td nowrap  class="TableControl" colspan="2" align="center">
-	        <input type="button" value="保存" class="btn btn-primary" title="保存" onclick="doSave()" >&nbsp;&nbsp;
+	    <div style="" align="center">
+	    	 <input type="button" value="注册" class="btn btn-primary" title="注册" onclick="doSave()" >&nbsp;&nbsp;
 	        <input type="button" value="返回" class="btn btn-primary" title="返回" onClick="history.go(-1);">
+	    </div>
 	    </td>
    </tr>
 </table>
