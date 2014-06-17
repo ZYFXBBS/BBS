@@ -2,6 +2,7 @@ package com.zyfx.core.bbs.member.services.impl;
 
 import java.util.List;
 
+import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ import com.zyfx.core.framework.common.utils.PageUtil;
 public class MemberServiceImpl implements IMemberService{
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
+	
+	@Autowired
+	private Mapper dozerBeanMapper;
 	
 	@Autowired
 	private IMemberOperation mapper;
@@ -55,8 +59,10 @@ public class MemberServiceImpl implements IMemberService{
 	}
 	
 	@Transactional(rollbackFor = { Exception.class })
-	public void register(Member member) {
-			mapper.addMember(member);
+	public void register(MemberInfo info) {
+		Member member =  dozerBeanMapper.map(info,Member.class);
+		logger.debug("转换 MemberInfo >> Member 对象..");
+		mapper.addMember(member);
 	}
 
 	@Override

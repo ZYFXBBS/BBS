@@ -41,10 +41,13 @@ public class MemberController {
 		return page;
 	}
 	
+	@RequestMapping(value = "/register")
+	@ResponseBody
 	public JsonResult register(MemberInfo info){
 		JsonResult js = new JsonResult();
 		try {
-			iMemberService.register(null);
+			iMemberService.register(info);
+			js.setState(true);
 		} catch (Exception e) {
 			js.setState(false);
 			logger.error("注册会员信息失败!", e);

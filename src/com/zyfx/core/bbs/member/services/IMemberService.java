@@ -32,7 +32,7 @@ public interface IMemberService {
      * @author by zhp 2014-5-29 上午12:14:49
      * @throws Exception 
      */
-    public void register(Member member);
+    public void register(MemberInfo info);
     
     /**
      * 根据用户名查找用户

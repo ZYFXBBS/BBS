@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html>
 <head>
 <%
-response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
+response.addHeader("X-UA-Compatible", "IE=edge");
 %>
 <%@ include file="/header/header.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,10 +18,10 @@ $(function(){
 	});
 	
 function saveMember(){
-	var url = "<%=contextPath%>/teeAddressController/addAddress.do";
+	var url = "<%=contextPath%>/memberController/register.do";
 	var para =  $.FJ($("#form1")) ;
 	var jsonRs = $.AF(url,para);
-	if(jsonRs.rtState){
+	if(jsonRs.state){
 		// top.$.jBox.tip("保存成功！");
 	}else{
 		alert(jsonRs.rtMsg);
@@ -93,7 +94,7 @@ function saveMember(){
 	 <tr>
 	    <td nowrap  class="TableControl" colspan="2" align="center">
 	    <div style="" align="center">
-	    	 <input type="button" value="注册" class="btn btn-primary" title="注册" onclick="doSave()" >&nbsp;&nbsp;
+	    	 <input type="button" value="注册" class="btn btn-primary" title="注册" onclick="saveMember()" >&nbsp;&nbsp;
 	        <input type="button" value="返回" class="btn btn-primary" title="返回" onClick="history.go(-1);">
 	    </div>
 	    </td>
