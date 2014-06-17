@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "" "">
+<HTML lang="zh-CN"><HEAD>
+<META content="IE=10.000" http-equiv="X-UA-Compatible">
 <head>
 <%
-response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
+response.addHeader("X-UA-Compatible", "IE=edge");
 %>
 <%@ include file="/header/header.jsp" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,22 +16,23 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
 <script type="text/javascript">
 $(function(){
 	
-	});
+});
 	
 function saveMember(){
-	var url = "<%=contextPath%>/teeAddressController/addAddress.do";
+	var url = "<%=contextPath%>/memberController/register.do";
 	var para =  $.FJ($("#form1")) ;
 	var jsonRs = $.AF(url,para);
-	if(jsonRs.rtState){
+	if(jsonRs.state){
 		// top.$.jBox.tip("保存成功！");
 	}else{
 		alert(jsonRs.rtMsg);
 	}
 }
+
 </script>
 </head>
 <body>
- <legend>添加会员信息</legend>
+ <legend>会员注册</legend>
 	<form  method="post" name="form1" id="form1" >
 <table width="60%" align="center">
    <tr>
@@ -65,10 +68,37 @@ function saveMember(){
 		<input type='text' name="mobile"   maxlength="50"  size="20"  />
 		</td>
 	</tr>
+	
+	<tr>
+		<td nowrap  width="120">家庭电话：</td>
+		<td nowrap  >
+		<input type='text' name="homephone"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">qq：</td>
+		<td nowrap  >
+		<input type='text' name="qq"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">地址：</td>
+		<td nowrap  >
+		<input type='text' name="address"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
+	<tr>
+		<td nowrap  width="120">邮编：</td>
+		<td nowrap  >
+		<input type='text' name="postCode"   maxlength="50"  size="20"  />
+		</td>
+	</tr>
 	 <tr>
 	    <td nowrap  class="TableControl" colspan="2" align="center">
-	        <input type="button" value="保存" class="btn btn-primary" title="保存" onclick="doSave()" >&nbsp;&nbsp;
+	    <div style="" align="center">
+	    	 <input type="button" value="注册" class="btn btn-primary" title="注册" onclick="saveMember()" >&nbsp;&nbsp;
 	        <input type="button" value="返回" class="btn btn-primary" title="返回" onClick="history.go(-1);">
+	    </div>
 	    </td>
    </tr>
 </table>

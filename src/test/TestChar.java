@@ -56,10 +56,16 @@ public class TestChar {
    return true;
   }
   
-  
+  private static   boolean IsName(String str){
+		if(str==null){
+			return false;
+		}else{
+			return str.matches("^[a-zA-Z\u4e00-\u9fa5]+$");
+		}
+	}
    public static void main(String[] args) {
-	String name = "说%";
-	boolean isChine = TestChar.isConSpeCharacters(name);
+	String name = "aaaa";
+	boolean isChine = TestChar.IsName(name);
 	System.out.println(isChine);
 }
 

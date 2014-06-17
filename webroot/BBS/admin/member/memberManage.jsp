@@ -57,7 +57,7 @@ response.addHeader("X-UA-Compatible", "IE=EmulateIE9");
         { title:'注册时间', name:'date' ,width:100, align:'center', sortable: true,sortName:'date', hidden: true},
         { title:'邮箱', name:'email' ,width:100, align:'center', hidden: true},
         { title:'操作', name:'' ,width:150, align:'center', lockWidth:true, lockDisplay: true, renderer: function(val){
-            return '<button  class="btn btn-info btn-small">查看</button> <button  class="btn btn-danger btn-small">删除</button>'
+            return '<button  class="btn btn-info btn-small" onclick="getSelectCol();">查看</button> <button  class="btn btn-danger btn-small">删除</button>'
         }}
     
     ];
@@ -80,14 +80,24 @@ $(document).ready(function(){
         , fullWidthRows: true
        // , autoLoad: false
         , plugins: [
-            $('#pg').mmPaginator()
+            $('#pg').mmPaginator({})
         ]
+        
+
         
     });
 
 	
 });
-	
+
+function getSelectCol(){
+	var cols = $('#memberList').mmGrid('selectedRows');
+	if(cols && cols.length != 1){
+		alert("请选择 一条记录!");
+	}else{
+		alert("您选择的 记录 会员名:"+cols[0].memberName);
+	}
+}
 </script>
 </head>
 <body >
