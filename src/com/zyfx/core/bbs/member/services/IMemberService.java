@@ -46,7 +46,7 @@ public interface IMemberService {
     * @param 
     * @author by zhp 2014-5-29 上午12:15:40
     */
-    public boolean delUsers(int id);
+    public void deleteMember(int id);
     
     /**
      * 根据ID查询会员

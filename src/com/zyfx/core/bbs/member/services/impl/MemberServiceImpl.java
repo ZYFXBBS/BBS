@@ -28,9 +28,9 @@ public class MemberServiceImpl implements IMemberService{
 	@Autowired
 	private IMemberOperation mapper;
 	
-	public boolean delUsers(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	@Transactional(rollbackFor = { Exception.class })
+	public void deleteMember(int memberId) {
+		mapper.deleteMember(memberId);
 	}
 	/**
 	 * 查询会员信息 

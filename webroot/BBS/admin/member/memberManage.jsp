@@ -93,9 +93,21 @@ $(document).ready(function(){
 function getSelectCol(){
 	var cols = $('#memberList').mmGrid('selectedRows');
 	if(cols && cols.length != 1){
-		alert("请选择 一条记录!");
+		bbs.alert("请选择 一条记录!");
 	}else{
-		alert("您选择的 记录 会员名:"+cols[0].memberName);
+		bbs.alert("您选择的 记录 会员名:"+cols[0].memberName);
+	}
+}
+
+function deleteMember(id){
+	var url = "<%=contextPath%>/memberController/deleteMember.do";
+	var para =  {};
+	para['id'] = id;
+	var jsonRs = $.AF(url,para);
+	if(jsonRs.state){
+		// top.$.jBox.tip("保存成功！");
+	}else{
+		alert(jsonRs.rtMsg);
 	}
 }
 </script>

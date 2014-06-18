@@ -55,4 +55,17 @@ public class MemberController {
 		return js;
 	}
 	
+	@RequestMapping(value = "/deleteMember")
+	@ResponseBody
+	public JsonResult deleteMember(MemberInfo info){
+		JsonResult js = new JsonResult();
+		try {
+			iMemberService.register(info);
+			js.setState(true);
+		} catch (Exception e) {
+			js.setState(false);
+			logger.error("注册会员信息失败!", e);
+		}
+		return js;
+	}
 }
