@@ -86,7 +86,7 @@ $(document).ready(function(){
 
         
     });
-
+	deleteMember(1);
 	
 });
 
@@ -99,17 +99,23 @@ function getSelectCol(){
 	}
 }
 
+
 function deleteMember(id){
-	var url = "<%=contextPath%>/memberController/deleteMember.do";
-	var para =  {};
-	para['id'] = id;
-	var jsonRs = $.AF(url,para);
-	if(jsonRs.state){
-		// top.$.jBox.tip("保存成功！");
-	}else{
-		alert(jsonRs.rtMsg);
-	}
+	bbs.confirm("确定删除此记录?",function(v, h, f){
+		
+		var url = "<%=contextPath%>/memberController/deleteMember.do";
+		var para =  {};
+		para['id'] = id;
+		var jsonRs = $.AF(url,para);
+		if(jsonRs.state){
+			bbs.tip("删除成功!");
+		}else{
+			bbs.tip("删除失败!");
+		}
+	});
 }
+
+
 </script>
 </head>
 <body >

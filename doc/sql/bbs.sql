@@ -1,6 +1,9 @@
 /*
 Navicat MySQL Data Transfer
 1111111111
+=======
+//============================
+>>>>>>> branch 'master' of https://github.com/ZYFXBBS/BBS.git
 Source Server         : mysql
 Source Server Version : 50150
 Source Host           : localhost:3306

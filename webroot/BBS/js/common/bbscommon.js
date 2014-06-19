@@ -60,17 +60,23 @@ var bbs = {
 	alert:function (info){
 		top.$.jBox.alert(info,"自由飞翔BBS");
 	},
-	confirm:function(info,title,){
+	confirm:function(info,func1,func2){
 		var submit = function (v, h, f) {
-	    if (v == 'ok')
-	        jBox.tip(v, 'info');
-	    else if (v == 'cancel')
-	        jBox.tip(v, 'info');
-	
-	    return true; //close
+	    if (v == true){
+	    	if(func1){
+	    		func1(v, h, f);
+	    	}
+	    }else if(func2){
+	    	func2(v, h, f);
+	    }
+	    return true;
 		};
-		$.jBox.confirm("确定吗？", "提示", submit);
+		// 自定义按钮
+		top.$.jBox.confirm(info, "提示", submit, { buttons: { '确定': true, '取消': false} });
 			
+	},
+	tip:function(content, icon, options){
+		top.$.jBox.tip(content, icon, options);
 	}
 }
 
